@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Finde zufällig das perfekte Spiel für deine Stimmung und verfügbare Zeit">
+    <title>Was zock ich heute? 🎮</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Gradient Animation -->
+    <div class="gradient-bg"></div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <span class="dice-icon">🎲</span>
+                <h1>Was zock ich heute?</h1>
+            </div>
+            <p class="subtitle">Finde dein perfektes Spiel für den Moment</p>
+        </header>
+
+        <!-- Filter Section -->
+        <section class="filters">
+            <!-- Stimmung -->
+            <div class="filter-group">
+                <label for="mood">🎭 Stimmung</label>
+                <select id="mood" class="filter-select">
+                    <option value="">Alle Stimmungen</option>
+                    <option value="entspannt">Entspannt</option>
+                    <option value="kompetitiv">Kompetitiv</option>
+                    <option value="kreativ">Kreativ</option>
+                    <option value="storylastig">Storylastig</option>
+                    <option value="chaotisch">Chaotisch</option>
+                    <option value="horror">Horror</option>
+                    <option value="strategisch">Strategisch</option>
+                    <option value="abenteuer">Abenteuer</option>
+                </select>
+            </div>
+
+            <!-- Zeit -->
+            <div class="filter-group">
+                <label for="time">⏱️ Verfügbare Zeit</label>
+                <select id="time" class="filter-select">
+                    <option value="">Beliebig</option>
+                    <option value="kurz">15-30 Minuten</option>
+                    <option value="mittel">1 Stunde</option>
+                    <option value="lang">2+ Stunden</option>
+                </select>
+            </div>
+
+            <!-- Spielmodus -->
+            <div class="filter-group">
+                <label>👥 Spielmodus</label>
+                <div class="toggle-buttons">
+                    <button class="toggle-btn active" data-mode="alle">Alle</button>
+                    <button class="toggle-btn" data-mode="solo">Solo</button>
+                    <button class="toggle-btn" data-mode="multiplayer">Mit Freunden</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Button -->
+        <div class="action-section">
+            <button id="suggestBtn" class="suggest-btn">
+                <span class="btn-icon">🎲</span>
+                <span class="btn-text">Game vorschlagen</span>
+            </button>
+        </div>
+
+        <!-- Result Section -->
+        <section id="result" class="result-section hidden">
+            <div class="game-card">
+                <div class="card-header">
+                    <h2 id="gameName"></h2>
+                    <span id="gameMode" class="mode-badge"></span>
+                </div>
+                <div class="card-body">
+                    <div class="game-info">
+                        <div class="info-item">
+                            <span class="info-label">Genre:</span>
+                            <span id="gameGenre" class="info-value"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Stimmung:</span>
+                            <span id="gameMood" class="info-value"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Spielzeit:</span>
+                            <span id="gameTime" class="info-value"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Plattform:</span>
+                            <span id="gamePlatform" class="info-value"></span>
+                        </div>
+                    </div>
+                    <p id="gameDescription" class="game-description"></p>
+                </div>
+                <div class="card-footer">
+                    <button id="rerollBtn" class="reroll-btn">
+                        <span>🔄</span>
+                        Nochmal würfeln
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- No Results Message -->
+        <section id="noResults" class="no-results hidden">
+            <div class="no-results-content">
+                <span class="sad-icon">😔</span>
+                <h3>Keine Spiele gefunden!</h3>
+                <p>Versuche es mit anderen Filtereinstellungen.</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Made with ❤️ for Gamers | <a href="https://github.com" target="_blank">GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
